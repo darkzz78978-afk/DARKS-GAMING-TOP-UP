@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#030508">
 <title>DARK | Gaming Store</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
   color:#fff;
   background:#030508;
   overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
 
-/* BACKGROUND */
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
 body:before{
   content:"";
   position:fixed;
@@ -29,6 +49,7 @@ body:before{
     radial-gradient(circle at 50% 90%,rgba(0,80,255,.12),transparent 35%),
     #030508;
 }
+
 body:after{
   content:"";
   position:fixed;
@@ -42,7 +63,10 @@ body:after{
   mask-image:linear-gradient(to bottom,#000,transparent 85%);
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 header{
   position:fixed;
   top:0;
@@ -53,6 +77,7 @@ header{
   backdrop-filter:blur(18px);
   border-bottom:1px solid rgba(0,170,255,.12);
 }
+
 .nav{
   width:min(1200px,92%);
   min-height:76px;
@@ -60,24 +85,47 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:15px;
 }
+
 .logo{
   font-size:30px;
   font-weight:1000;
   letter-spacing:7px;
-  text-shadow:0 0 12px #008cff,0 0 35px rgba(0,140,255,.5);
+  text-shadow:
+    0 0 12px #008cff,
+    0 0 35px rgba(0,140,255,.5);
 }
-.logo i{color:#00aaff;font-style:normal}
-nav{display:flex;gap:28px}
+
+.logo i{
+  color:#00aaff;
+  font-style:normal;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+}
+
 nav a{
   color:#9da9b8;
   font-size:13px;
   font-weight:800;
   transition:.25s;
 }
-nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
-.nav-buttons{display:flex;gap:8px}
-.nav-btn,.menu{
+
+nav a:hover{
+  color:#fff;
+  text-shadow:0 0 12px #00aaff;
+}
+
+.nav-buttons{
+  display:flex;
+  gap:8px;
+}
+
+.nav-btn,
+.menu{
   width:42px;
   height:42px;
   border-radius:12px;
@@ -86,9 +134,36 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   color:#fff;
   cursor:pointer;
 }
-.menu{display:none}
 
-/* HERO */
+.nav-btn:hover,
+.menu:hover{
+  border-color:#00aaff;
+  box-shadow:0 0 20px rgba(0,170,255,.2);
+}
+
+.cart-count{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:19px;
+  height:19px;
+  padding:0 5px;
+  margin-left:2px;
+  border-radius:20px;
+  background:#00aaff;
+  color:#00121d;
+  font-size:11px;
+  font-weight:900;
+}
+
+.menu{
+  display:none;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
   min-height:100vh;
   padding-top:76px;
@@ -96,6 +171,7 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   align-items:center;
   position:relative;
 }
+
 .hero-inner{
   width:min(1200px,92%);
   margin:auto;
@@ -104,6 +180,7 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   align-items:center;
   gap:50px;
 }
+
 .hero-kicker{
   color:#00b7ff;
   font-size:12px;
@@ -111,15 +188,20 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   font-weight:900;
   margin-bottom:20px;
 }
+
 .hero h1{
   font-size:clamp(55px,8vw,105px);
   line-height:.84;
   letter-spacing:-6px;
 }
+
 .hero h1 span{
   color:#00aaff;
-  text-shadow:0 0 20px #008cff,0 0 60px rgba(0,140,255,.5);
+  text-shadow:
+    0 0 20px #008cff,
+    0 0 60px rgba(0,140,255,.5);
 }
+
 .hero-text{
   color:#8c99a9;
   max-width:560px;
@@ -127,7 +209,13 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   font-size:16px;
   margin:28px 0;
 }
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
 .btn{
   border:0;
   border-radius:12px;
@@ -136,20 +224,32 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   cursor:pointer;
   transition:.25s;
 }
+
 .primary{
   color:#00121d;
   background:linear-gradient(135deg,#00aaff,#00e5ff);
   box-shadow:0 0 30px rgba(0,170,255,.28);
 }
-.primary:hover{transform:translateY(-3px);box-shadow:0 0 45px rgba(0,170,255,.5)}
+
+.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 45px rgba(0,170,255,.5);
+}
+
 .secondary{
   color:#fff;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.13);
 }
-.secondary:hover{border-color:#00aaff}
 
-/* HERO ART */
+.secondary:hover{
+  border-color:#00aaff;
+}
+
+/* =========================
+   HERO ART
+========================= */
+
 .hero-visual{
   height:560px;
   position:relative;
@@ -157,6 +257,7 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   align-items:center;
   justify-content:center;
 }
+
 .orb{
   position:absolute;
   width:360px;
@@ -166,6 +267,7 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   filter:blur(110px);
   opacity:.16;
 }
+
 .hero-img{
   position:absolute;
   width:290px;
@@ -175,9 +277,22 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   border:1px solid rgba(255,255,255,.18);
   box-shadow:0 30px 80px #000;
 }
-.hero-img.one{transform:translateX(-105px) rotate(-9deg);opacity:.65}
-.hero-img.two{transform:translateX(0) rotate(0);z-index:3}
-.hero-img.three{transform:translateX(105px) rotate(9deg);opacity:.65}
+
+.hero-img.one{
+  transform:translateX(-105px) rotate(-9deg);
+  opacity:.65;
+}
+
+.hero-img.two{
+  transform:translateX(0);
+  z-index:3;
+}
+
+.hero-img.three{
+  transform:translateX(105px) rotate(9deg);
+  opacity:.65;
+}
+
 .floating{
   position:absolute;
   z-index:5;
@@ -192,10 +307,23 @@ nav a:hover{color:#fff;text-shadow:0 0 12px #00aaff}
   letter-spacing:2px;
 }
 
-/* SECTIONS */
-section{padding:100px 0}
-.wrap{width:min(1200px,92%);margin:auto}
-.section-top{margin-bottom:35px}
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  padding:100px 0;
+}
+
+.wrap{
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+.section-top{
+  margin-bottom:35px;
+}
+
 .tag{
   color:#00aaff;
   font-size:11px;
@@ -203,15 +331,79 @@ section{padding:100px 0}
   letter-spacing:3px;
   margin-bottom:9px;
 }
-h2{font-size:clamp(32px,5vw,55px)}
-.section-desc{color:#7f8b9b;line-height:1.6;margin-top:10px}
 
-/* GAMES */
+h2{
+  font-size:clamp(32px,5vw,55px);
+}
+
+.section-desc{
+  color:#7f8b9b;
+  line-height:1.6;
+  margin-top:10px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+  width:100%;
+  padding:15px 18px;
+  margin-bottom:25px;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.1);
+  outline:none;
+  background:#080d13;
+  color:#fff;
+}
+
+.search-box:focus{
+  border-color:#00aaff;
+}
+
+.search-box::placeholder{
+  color:#657386;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:20px;
+}
+
+.filter{
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.035);
+  color:#aeb8c7;
+  border-radius:30px;
+  padding:9px 15px;
+  cursor:pointer;
+  font-weight:800;
+  font-size:12px;
+}
+
+.filter.active,
+.filter:hover{
+  color:#fff;
+  border-color:#00aaff;
+  background:rgba(0,170,255,.1);
+}
+
+/* =========================
+   GAMES
+========================= */
+
 .games{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:18px;
 }
+
 .game{
   position:relative;
   height:390px;
@@ -222,24 +414,36 @@ h2{font-size:clamp(32px,5vw,55px)}
   cursor:pointer;
   transition:.35s;
 }
+
 .game:hover{
   transform:translateY(-10px);
   border-color:#00aaff;
-  box-shadow:0 25px 60px rgba(0,0,0,.5),0 0 30px rgba(0,170,255,.12);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.5),
+    0 0 30px rgba(0,170,255,.12);
 }
+
 .game img{
   width:100%;
   height:100%;
   object-fit:cover;
   transition:.45s;
 }
-.game:hover img{transform:scale(1.07)}
+
+.game:hover img{
+  transform:scale(1.07);
+}
+
 .game:after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(transparent 35%,rgba(0,0,0,.95));
+  background:linear-gradient(
+    transparent 35%,
+    rgba(0,0,0,.95)
+  );
 }
+
 .game-info{
   position:absolute;
   z-index:2;
@@ -247,67 +451,128 @@ h2{font-size:clamp(32px,5vw,55px)}
   right:20px;
   bottom:20px;
 }
+
 .game-info small{
   color:#00b7ff;
   font-weight:900;
   letter-spacing:2px;
 }
-.game-info h3{font-size:24px;margin:7px 0}
 
-/* DEALS */
+.game-info h3{
+  font-size:24px;
+  margin:7px 0;
+}
+
+.game-info p{
+  color:#aeb8c7;
+}
+
+/* =========================
+   DEALS
+========================= */
+
 .deals{
   display:grid;
   grid-template-columns:1.4fr .8fr;
   gap:18px;
 }
+
 .deal{
   min-height:260px;
   padding:35px;
   border-radius:25px;
   border:1px solid rgba(0,170,255,.15);
   background:
-    radial-gradient(circle at 90% 20%,rgba(0,170,255,.18),transparent 35%),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(0,170,255,.18),
+      transparent 35%
+    ),
     #080d13;
 }
+
 .deal.green{
   background:
-    radial-gradient(circle at 90% 20%,rgba(0,255,140,.14),transparent 35%),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(0,255,140,.14),
+      transparent 35%
+    ),
     #080d10;
 }
-.deal h3{font-size:32px;margin-bottom:12px}
-.deal p{color:#8190a1;line-height:1.7;max-width:550px;margin-bottom:25px}
 
-/* WHY */
+.deal h3{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.deal p{
+  color:#8190a1;
+  line-height:1.7;
+  max-width:550px;
+  margin-bottom:25px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
 .features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
+
 .feature{
   padding:28px;
   border:1px solid rgba(255,255,255,.08);
   border-radius:20px;
   background:rgba(255,255,255,.025);
 }
-.feature-icon{font-size:30px;margin-bottom:18px}
-.feature h3{margin-bottom:9px}
-.feature p{color:#7e8a9b;line-height:1.6;font-size:13px}
 
-/* PAYMENT */
+.feature-icon{
+  font-size:30px;
+  margin-bottom:18px;
+}
+
+.feature h3{
+  margin-bottom:9px;
+}
+
+.feature p{
+  color:#7e8a9b;
+  line-height:1.6;
+  font-size:13px;
+}
+
+/* =========================
+   PAYMENT
+========================= */
+
 .payment{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
+
 .payment-card{
   padding:35px;
   border-radius:25px;
   border:1px solid rgba(0,170,255,.2);
   background:
-    radial-gradient(circle at 90% 10%,rgba(0,170,255,.14),transparent 35%),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(0,170,255,.14),
+      transparent 35%
+    ),
     #080d13;
 }
-.payment-card h3{font-size:27px;margin-bottom:18px}
+
+.payment-card h3{
+  font-size:27px;
+  margin-bottom:18px;
+}
+
 .payment-line{
   display:flex;
   justify-content:space-between;
@@ -315,28 +580,53 @@ h2{font-size:clamp(32px,5vw,55px)}
   padding:15px 0;
   border-bottom:1px solid rgba(255,255,255,.07);
 }
-.payment-line span{color:#7f8b9b}
-.payment-line strong{color:#fff}
 
-/* CONTACT */
+.payment-line span{
+  color:#7f8b9b;
+}
+
+.payment-line strong{
+  color:#fff;
+  text-align:right;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact{
   text-align:center;
   padding:70px 30px;
   border:1px solid rgba(0,170,255,.18);
   border-radius:30px;
   background:
-    radial-gradient(circle,rgba(0,140,255,.12),transparent 60%),
+    radial-gradient(
+      circle,
+      rgba(0,140,255,.12),
+      transparent 60%
+    ),
     #070b10;
 }
-.contact h2{margin-bottom:15px}
-.contact p{color:#8290a1;margin-bottom:25px}
 
-/* FOOTER */
+.contact h2{
+  margin-bottom:15px;
+}
+
+.contact p{
+  color:#8290a1;
+  margin-bottom:25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
   border-top:1px solid rgba(255,255,255,.07);
   padding:35px 0;
   color:#667384;
 }
+
 .footer{
   width:min(1200px,92%);
   margin:auto;
@@ -344,9 +634,158 @@ footer{
   justify-content:space-between;
   gap:20px;
 }
-.footer strong{color:#fff;letter-spacing:4px}
 
-/* MODAL */
+.footer strong{
+  color:#fff;
+  letter-spacing:4px;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1400;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(5px);
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+}
+
+.cart-overlay.open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.cart{
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:1500;
+  width:min(430px,94vw);
+  height:100vh;
+  background:#080c11;
+  border-left:1px solid rgba(0,170,255,.2);
+  transform:translateX(105%);
+  transition:.3s;
+  display:flex;
+  flex-direction:column;
+}
+
+.cart.open{
+  transform:translateX(0);
+}
+
+.cart-head{
+  padding:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.cart-head h2{
+  font-size:22px;
+}
+
+.cart-close{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.1);
+  background:#0d131a;
+  color:#fff;
+  cursor:pointer;
+}
+
+.cart-items{
+  flex:1;
+  overflow:auto;
+  padding:18px;
+}
+
+.empty{
+  color:#718093;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:58px 1fr auto;
+  gap:12px;
+  align-items:center;
+  padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.cart-item img{
+  width:58px;
+  height:58px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+.cart-item h4{
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.cart-uid{
+  color:#788597;
+  font-size:11px;
+  margin-bottom:3px;
+}
+
+.cart-price{
+  color:#00aaff;
+  font-size:12px;
+  font-weight:900;
+}
+
+.receipt-attached{
+  color:#00ff95;
+  font-size:10px;
+  font-weight:800;
+  margin-top:4px;
+}
+
+.remove{
+  border:0;
+  background:none;
+  color:#778597;
+  cursor:pointer;
+  font-size:17px;
+}
+
+.remove:hover{
+  color:#ff4d5a;
+}
+
+.cart-bottom{
+  padding:20px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+  font-weight:900;
+}
+
+.total strong{
+  color:#00aaff;
+  font-size:21px;
+}
+
+/* =========================
+   PRODUCT MODAL
+========================= */
+
 .modal-bg{
   position:fixed;
   inset:0;
@@ -358,45 +797,77 @@ footer{
   background:rgba(0,0,0,.78);
   backdrop-filter:blur(12px);
 }
-.modal-bg.open{display:flex}
+
+.modal-bg.open{
+  display:flex;
+}
+
 .modal{
   width:min(900px,100%);
-  max-height:90vh;
+  max-height:92vh;
   overflow:auto;
   border-radius:25px;
   border:1px solid rgba(0,170,255,.25);
   background:#080c11;
   box-shadow:0 30px 100px #000;
 }
+
 .modal-grid{
   display:grid;
   grid-template-columns:.85fr 1.15fr;
 }
+
 .modal-image{
-  min-height:480px;
+  min-height:520px;
 }
+
 .modal-image img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-.modal-content{padding:35px}
+
+.modal-content{
+  padding:35px;
+}
+
 .close{
   float:right;
+  width:38px;
+  height:38px;
   border:0;
-  background:none;
+  border-radius:10px;
+  background:#0c1219;
   color:#8b98a8;
   font-size:25px;
   cursor:pointer;
 }
-.modal-content h2{font-size:38px;margin:15px 0}
-.modal-content>p{color:#7e8b9b;line-height:1.6;margin-bottom:25px}
+
+.close:hover{
+  color:#fff;
+}
+
+.modal-content h2{
+  font-size:38px;
+  margin:15px 0;
+}
+
+.modal-content>p{
+  color:#7e8b9b;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+
+/* PACKAGES */
+
 .packages{
   display:grid;
   gap:9px;
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
+
 .package{
+  width:100%;
   padding:14px;
   border:1px solid rgba(255,255,255,.08);
   border-radius:12px;
@@ -405,11 +876,35 @@ footer{
   cursor:pointer;
   display:flex;
   justify-content:space-between;
+  text-align:left;
+  transition:.2s;
 }
-.package:hover,.package.selected{
+
+.package:hover,
+.package.selected{
   border-color:#00aaff;
   background:rgba(0,170,255,.08);
 }
+
+.package strong{
+  color:#00aaff;
+}
+
+/* INPUTS */
+
+.field-label{
+  display:block;
+  color:#aeb8c7;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:7px;
+}
+
+.optional{
+  color:#667384;
+  font-weight:500;
+}
+
 .field{
   width:100%;
   padding:14px;
@@ -418,18 +913,78 @@ footer{
   background:#05080c;
   color:#fff;
   outline:none;
-  margin-bottom:14px;
+  margin-bottom:15px;
 }
-.field:focus{border-color:#00aaff}
 
-/* RESPONSIVE */
-@media(max-width:950px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-visual{height:480px}
-  .games{grid-template-columns:repeat(2,1fr)}
-  .payment,.deals{grid-template-columns:1fr}
+.field:focus{
+  border-color:#00aaff;
 }
+
+.file-field{
+  cursor:pointer;
+}
+
+.file-note{
+  color:#657386;
+  font-size:10px;
+  line-height:1.5;
+  margin-top:-7px;
+  margin-bottom:17px;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  z-index:3000;
+  transform:translate(-50%,30px);
+  background:#101820;
+  border:1px solid rgba(0,170,255,.3);
+  color:#fff;
+  padding:13px 18px;
+  border-radius:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .hero-visual{
+    height:480px;
+  }
+
+  .games{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .payment,
+  .deals{
+    grid-template-columns:1fr;
+  }
+
+}
+
 @media(max-width:700px){
+
   nav{
     position:absolute;
     top:76px;
@@ -441,52 +996,165 @@ footer{
     background:#05080c;
     border-bottom:1px solid rgba(0,170,255,.15);
   }
-  nav.open{display:flex}
-  .menu{display:block}
-  .hero{text-align:center}
-  .hero-text{margin-left:auto;margin-right:auto}
-  .hero-actions{justify-content:center}
-  .hero-visual{height:400px}
-  .hero-img{width:210px;height:290px}
-  .hero-img.one{transform:translateX(-75px) rotate(-9deg)}
-  .hero-img.three{transform:translateX(75px) rotate(9deg)}
-  .games{grid-template-columns:1fr}
-  .game{height:430px}
-  .features{grid-template-columns:1fr}
-  .footer{flex-direction:column}
-  .modal-grid{grid-template-columns:1fr}
-  .modal-image{height:280px;min-height:0}
+
+  nav.open{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero{
+    text-align:center;
+  }
+
+  .hero-text{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    height:400px;
+  }
+
+  .hero-img{
+    width:210px;
+    height:290px;
+  }
+
+  .hero-img.one{
+    transform:translateX(-75px) rotate(-9deg);
+  }
+
+  .hero-img.three{
+    transform:translateX(75px) rotate(9deg);
+  }
+
+  .games{
+    grid-template-columns:1fr;
+  }
+
+  .game{
+    height:430px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    flex-direction:column;
+  }
+
+  .modal-grid{
+    grid-template-columns:1fr;
+  }
+
+  .modal-image{
+    height:280px;
+    min-height:0;
+  }
+
+  .modal-content{
+    padding:25px;
+  }
+
+  .modal-content h2{
+    font-size:31px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
   <div class="nav">
-    <a href="#home" class="logo">D<i>A</i>RK</a>
+
+    <a href="#home" class="logo">
+      D<i>A</i>RK
+    </a>
 
     <nav id="nav">
+
       <a href="#home">HOME</a>
+
       <a href="#games">GAMING</a>
+
       <a href="#deals">DEALS</a>
+
       <a href="#payment">PAYMENT</a>
+
       <a href="#contact">CONTACT</a>
+
     </nav>
 
     <div class="nav-buttons">
-      <button class="nav-btn" onclick="document.getElementById('games').scrollIntoView()">⌕</button>
-      <button class="nav-btn" onclick="alert('Cart coming into the full checkout system.')">🛒</button>
-      <button class="menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+
+      <button
+        class="nav-btn"
+        onclick="focusSearch()"
+        aria-label="Search"
+      >
+        ⌕
+      </button>
+
+      <button
+        class="nav-btn"
+        onclick="openCart()"
+        aria-label="Cart"
+      >
+        🛒
+        <span
+          class="cart-count"
+          id="cartCount"
+        >0</span>
+      </button>
+
+      <button
+        class="menu"
+        onclick="toggleMenu()"
+        aria-label="Menu"
+      >
+        ☰
+      </button>
+
     </div>
+
   </div>
+
 </header>
 
-<section class="hero" id="home">
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+  class="hero"
+  id="home"
+>
+
   <div class="hero-inner">
 
     <div>
-      <div class="hero-kicker">DARK DIGITAL GAMING STORE</div>
+
+      <div class="hero-kicker">
+        DARK DIGITAL GAMING STORE
+      </div>
 
       <h1>
         PLAY<br>
@@ -501,367 +1169,1807 @@ footer{
       </p>
 
       <div class="hero-actions">
-        <a class="btn primary" href="#games">EXPLORE GAMING →</a>
-        <a class="btn secondary" href="#contact">CONTACT DARK</a>
+
+        <a
+          class="btn primary"
+          href="#games"
+        >
+          EXPLORE GAMING →
+        </a>
+
+        <a
+          class="btn secondary"
+          href="#contact"
+        >
+          CONTACT DARK
+        </a>
+
       </div>
+
     </div>
+
 
     <div class="hero-visual">
+
       <div class="orb"></div>
 
-      <img class="hero-img one"
-        src="images/f93f089a3d8211ede4c832c3a24efe1e.jpg"
-        alt="Roblox">
 
-      <img class="hero-img two"
-        src="images/f31054399c0c2604548ba7dfdced2a62.jpg"
-        alt="PUBG Mobile">
+      <img
+        class="hero-img one"
+        src="f93f089a3d8211ede4c832c3a24efe1e.jpg"
+        alt="Roblox"
+      >
 
-      <img class="hero-img three"
-        src="images/f9f56c26780ac312b21e2d3a7da703f5.jpg"
-        alt="Call of Duty Mobile">
 
-      <div class="floating">GAMING • TOP-UPS • DIGITAL</div>
+      <img
+        class="hero-img two"
+        src="f31054399c0c2604548ba7dfdced2a62.jpg"
+        alt="PUBG Mobile"
+      >
+
+
+      <img
+        class="hero-img three"
+        src="f9f56c26780ac312b21e2d3a7da703f5.jpg"
+        alt="Call of Duty Mobile"
+      >
+
+
+      <div class="floating">
+        GAMING • TOP-UPS • DIGITAL
+      </div>
+
     </div>
 
   </div>
+
 </section>
+
+
+<!-- =========================
+     GAMES
+========================= -->
 
 <section id="games">
+
   <div class="wrap">
 
     <div class="section-top">
-      <div class="tag">EXPLORE</div>
-      <h2>Choose Your Game</h2>
+
+      <div class="tag">
+        EXPLORE
+      </div>
+
+      <h2>
+        Choose Your Game
+      </h2>
+
       <p class="section-desc">
-        Tap a game to see packages, enter your player information
-        and start your order.
+        Choose a game, select your package, enter your
+        Gamer ID and optionally upload your payment receipt.
       </p>
-    </div>
-
-    <div class="games">
-
-      <article class="game" onclick="openProduct('Roblox','images/f93f089a3d8211ede4c832c3a24efe1e.jpg','Robux top-ups for Roblox.')">
-        <img src="images/f93f089a3d8211ede4c832c3a24efe1e.jpg" alt="Roblox">
-        <div class="game-info">
-          <small>TOP-UP</small>
-          <h3>Roblox</h3>
-          <p>Robux</p>
-        </div>
-      </article>
-
-      <article class="game" onclick="openProduct('Free Fire','images/30de15ba0e69c62e5e5987ceaae08401.jpg','Diamonds and Free Fire top-ups.')">
-        <img src="images/30de15ba0e69c62e5e5987ceaae08401.jpg" alt="Free Fire">
-        <div class="game-info">
-          <small>TOP-UP</small>
-          <h3>Free Fire</h3>
-          <p>Diamonds</p>
-        </div>
-      </article>
-
-      <article class="game" onclick="openProduct('Call of Duty Mobile','images/f9f56c26780ac312b21e2d3a7da703f5.jpg','CP top-ups for COD Mobile.')">
-        <img src="images/f9f56c26780ac312b21e2d3a7da703f5.jpg" alt="Call of Duty Mobile">
-        <div class="game-info">
-          <small>TOP-UP</small>
-          <h3>COD Mobile</h3>
-          <p>CP</p>
-        </div>
-      </article>
-
-      <article class="game" onclick="openProduct('PUBG Mobile','images/f31054399c0c2604548ba7dfdced2a62.jpg','UC top-ups for PUBG Mobile.')">
-        <img src="images/f31054399c0c2604548ba7dfdced2a62.jpg" alt="PUBG Mobile">
-        <div class="game-info">
-          <small>TOP-UP</small>
-          <h3>PUBG Mobile</h3>
-          <p>UC</p>
-        </div>
-      </article>
 
     </div>
+
+
+    <input
+      id="searchInput"
+      class="search-box"
+      type="search"
+      placeholder="Search games..."
+      oninput="searchGames()"
+    >
+
+
+    <div class="filters">
+
+      <button
+        class="filter active"
+        onclick="filterGames('all',this)"
+      >
+        ALL
+      </button>
+
+      <button
+        class="filter"
+        onclick="filterGames('roblox',this)"
+      >
+        ROBLOX
+      </button>
+
+      <button
+        class="filter"
+        onclick="filterGames('freefire',this)"
+      >
+        FREE FIRE
+      </button>
+
+      <button
+        class="filter"
+        onclick="filterGames('cod',this)"
+      >
+        COD MOBILE
+      </button>
+
+      <button
+        class="filter"
+        onclick="filterGames('pubg',this)"
+      >
+        PUBG MOBILE
+      </button>
+
+    </div>
+
+
+    <div class="games" id="gameGrid">
+
+
+      <!-- ROBLOX -->
+
+      <article
+        class="game"
+        data-game="roblox"
+        data-name="Roblox"
+        onclick="openProduct('roblox')"
+      >
+
+        <img
+          src="f93f089a3d8211ede4c832c3a24efe1e.jpg"
+          alt="Roblox"
+        >
+
+        <div class="game-info">
+
+          <small>
+            TOP-UP
+          </small>
+
+          <h3>
+            Roblox
+          </h3>
+
+          <p>
+            Robux
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- FREE FIRE -->
+
+      <article
+        class="game"
+        data-game="freefire"
+        data-name="Free Fire"
+        onclick="openProduct('freefire')"
+      >
+
+        <img
+          src="30de15ba0e69c62e5e5987ceaae08401.jpg"
+          alt="Free Fire"
+        >
+
+        <div class="game-info">
+
+          <small>
+            TOP-UP
+          </small>
+
+          <h3>
+            Free Fire
+          </h3>
+
+          <p>
+            Diamonds
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- COD -->
+
+      <article
+        class="game"
+        data-game="cod"
+        data-name="Call of Duty Mobile"
+        onclick="openProduct('cod')"
+      >
+
+        <img
+          src="f9f56c26780ac312b21e2d3a7da703f5.jpg"
+          alt="Call of Duty Mobile"
+        >
+
+        <div class="game-info">
+
+          <small>
+            TOP-UP
+          </small>
+
+          <h3>
+            COD Mobile
+          </h3>
+
+          <p>
+            CP
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- PUBG -->
+
+      <article
+        class="game"
+        data-game="pubg"
+        data-name="PUBG Mobile"
+        onclick="openProduct('pubg')"
+      >
+
+        <img
+          src="f31054399c0c2604548ba7dfdced2a62.jpg"
+          alt="PUBG Mobile"
+        >
+
+        <div class="game-info">
+
+          <small>
+            TOP-UP
+          </small>
+
+          <h3>
+            PUBG Mobile
+          </h3>
+
+          <p>
+            UC
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
   </div>
+
 </section>
 
+
+<!-- =========================
+     DEALS
+========================= -->
+
 <section id="deals">
+
   <div class="wrap">
 
     <div class="section-top">
-      <div class="tag">DARK EXCLUSIVE</div>
-      <h2>Deals & Drops</h2>
+
+      <div class="tag">
+        DARK EXCLUSIVE
+      </div>
+
+      <h2>
+        Deals & Drops
+      </h2>
+
     </div>
 
+
     <div class="deals">
+
       <div class="deal">
-        <h3>Power Up Your Game.</h3>
+
+        <h3>
+          Power Up Your Game.
+        </h3>
+
         <p>
           Find your favorite gaming top-ups and get your
           order started directly through DARK.
         </p>
-        <a class="btn primary" href="#games">SHOP NOW</a>
+
+        <a
+          class="btn primary"
+          href="#games"
+        >
+          SHOP NOW
+        </a>
+
       </div>
 
+
       <div class="deal green">
-        <h3>New Drops</h3>
+
+        <h3>
+          New Drops
+        </h3>
+
         <p>
           More games, gift cards and digital products
           can be added to DARK as the store grows.
         </p>
+
       </div>
+
     </div>
 
   </div>
+
 </section>
 
+
+<!-- =========================
+     FEATURES
+========================= -->
+
 <section>
+
   <div class="wrap">
 
     <div class="section-top">
-      <div class="tag">WHY DARK</div>
-      <h2>Built Different.</h2>
+
+      <div class="tag">
+        WHY DARK
+      </div>
+
+      <h2>
+        Built Different.
+      </h2>
+
     </div>
+
 
     <div class="features">
 
-      <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <h3>Fast Ordering</h3>
-        <p>Select your game and package and send your request without unnecessary steps.</p>
-      </div>
 
       <div class="feature">
-        <div class="feature-icon">🛡️</div>
-        <h3>Clear Process</h3>
-        <p>Your order details and payment instructions are presented clearly before you order.</p>
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Fast Ordering
+        </h3>
+
+        <p>
+          Select your game and package and send your
+          request without unnecessary steps.
+        </p>
+
       </div>
 
+
       <div class="feature">
-        <div class="feature-icon">🎮</div>
-        <h3>Made For Gamers</h3>
-        <p>DARK is designed around gaming, digital products and a modern gaming-store experience.</p>
+
+        <div class="feature-icon">
+          🛡️
+        </div>
+
+        <h3>
+          Clear Process
+        </h3>
+
+        <p>
+          Your order details and payment instructions
+          are presented clearly before you order.
+        </p>
+
       </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          🎮
+        </div>
+
+        <h3>
+          Made For Gamers
+        </h3>
+
+        <p>
+          DARK is designed around gaming, digital products
+          and a modern gaming-store experience.
+        </p>
+
+      </div>
+
 
     </div>
+
   </div>
+
 </section>
 
+
+<!-- =========================
+     PAYMENT
+========================= -->
+
 <section id="payment">
+
   <div class="wrap">
 
     <div class="section-top">
-      <div class="tag">CHECKOUT</div>
-      <h2>Payment</h2>
-      <p class="section-desc">Use the DARK payment information when completing your order.</p>
+
+      <div class="tag">
+        CHECKOUT
+      </div>
+
+      <h2>
+        Payment
+      </h2>
+
+      <p class="section-desc">
+        Use the DARK payment information when completing
+        your order.
+      </p>
+
     </div>
+
 
     <div class="payment">
 
+
       <div class="payment-card">
-        <h3>MMG Payment</h3>
+
+        <h3>
+          MMG Payment
+        </h3>
 
         <div class="payment-line">
-          <span>MMG Number</span>
-          <strong>762-6433</strong>
+
+          <span>
+            MMG Number
+          </span>
+
+          <strong>
+            762-6433
+          </strong>
+
         </div>
 
+
         <div class="payment-line">
-          <span>Merchant</span>
-          <strong>CASSIA HENRY</strong>
+
+          <span>
+            Merchant
+          </span>
+
+          <strong>
+            CASSIA HENRY
+          </strong>
+
         </div>
+
       </div>
 
+
       <div class="payment-card">
-        <h3>How Ordering Works</h3>
+
+        <h3>
+          How Ordering Works
+        </h3>
 
         <div class="payment-line">
-          <span>01</span>
-          <strong>Select your game</strong>
+
+          <span>
+            01
+          </span>
+
+          <strong>
+            Select your game
+          </strong>
+
         </div>
 
-        <div class="payment-line">
-          <span>02</span>
-          <strong>Choose your package</strong>
-        </div>
 
         <div class="payment-line">
-          <span>03</span>
-          <strong>Submit your player ID</strong>
+
+          <span>
+            02
+          </span>
+
+          <strong>
+            Choose your package
+          </strong>
+
         </div>
 
+
         <div class="payment-line">
-          <span>04</span>
-          <strong>Complete payment</strong>
+
+          <span>
+            03
+          </span>
+
+          <strong>
+            Enter Gamer ID
+          </strong>
+
         </div>
+
+
+        <div class="payment-line">
+
+          <span>
+            04
+          </span>
+
+          <strong>
+            Upload receipt
+          </strong>
+
+        </div>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
+
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section id="contact">
+
   <div class="wrap">
 
     <div class="contact">
-      <div class="tag">CONTACT DARK</div>
-      <h2>Ready To Level Up?</h2>
-      <p>Message DARK to place your gaming order.</p>
 
-      <div class="hero-actions" style="justify-content:center">
+      <div class="tag">
+        CONTACT DARK
+      </div>
 
-        <a class="btn primary"
-           href="https://wa.me/13436555995"
-           target="_blank">
+      <h2>
+        Ready To Level Up?
+      </h2>
+
+      <p>
+        Message DARK to place your gaming order.
+      </p>
+
+      <div
+        class="hero-actions"
+        style="justify-content:center"
+      >
+
+        <a
+          class="btn primary"
+          href="https://wa.me/13436555995"
+          target="_blank"
+        >
           WHATSAPP
         </a>
 
-        <a class="btn secondary"
-           href="https://wa.me/5927002769"
-           target="_blank">
+        <a
+          class="btn secondary"
+          href="https://wa.me/5927002769"
+          target="_blank"
+        >
           SECOND CONTACT
         </a>
 
       </div>
+
     </div>
 
   </div>
+
 </section>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
   <div class="footer">
+
     <div>
-      <strong>DARK</strong>
-      <div style="margin-top:8px">Digital Gaming Store • Guyana</div>
+
+      <strong>
+        DARK
+      </strong>
+
+      <div style="margin-top:8px">
+        Digital Gaming Store • Guyana
+      </div>
+
     </div>
-    <div>© 2026 DARK</div>
+
+    <div>
+      © 2026 DARK
+    </div>
+
   </div>
+
 </footer>
 
-<!-- PRODUCT DETAIL -->
-<div class="modal-bg" id="modal">
+
+<!-- =========================
+     CART OVERLAY
+========================= -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart()"
+></div>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<aside
+  class="cart"
+  id="cart"
+>
+
+  <div class="cart-head">
+
+    <h2>
+      Your Cart
+    </h2>
+
+    <button
+      class="cart-close"
+      onclick="closeCart()"
+    >
+      ✕
+    </button>
+
+  </div>
+
+
+  <div
+    class="cart-items"
+    id="cartItems"
+  >
+
+    <div class="empty">
+      Your cart is empty.
+    </div>
+
+  </div>
+
+
+  <div class="cart-bottom">
+
+    <div class="total">
+
+      <span>
+        Total
+      </span>
+
+      <strong id="cartTotal">
+        GYD 0
+      </strong>
+
+    </div>
+
+
+    <button
+      class="btn primary"
+      style="width:100%"
+      onclick="checkout()"
+    >
+      CHECKOUT / ORDER VIA WHATSAPP
+    </button>
+
+  </div>
+
+</aside>
+
+
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
+
+<div
+  class="modal-bg"
+  id="productModal"
+>
+
   <div class="modal">
 
     <div class="modal-grid">
 
+
       <div class="modal-image">
-        <img id="modalImg" src="" alt="">
+
+        <img
+          id="modalImage"
+          src=""
+          alt="Game"
+        >
+
       </div>
+
 
       <div class="modal-content">
 
-        <button class="close" onclick="closeProduct()">×</button>
+        <button
+          class="close"
+          onclick="closeProduct()"
+        >
+          ×
+        </button>
 
-        <div class="tag">DARK GAMING</div>
 
-        <h2 id="modalTitle">Game</h2>
+        <div class="tag">
+          DARK GAMING
+        </div>
 
-        <p id="modalDesc"></p>
 
-        <h3 style="margin-bottom:12px">Choose Package</h3>
+        <h2 id="modalTitle">
+          Game
+        </h2>
 
-        <div class="packages">
 
-          <button class="package" onclick="selectPackage(this,'40 Robux — GYD 300')">
-            <span>40 Robux</span>
-            <strong>GYD 300</strong>
-          </button>
+        <p id="modalDescription">
+          Select your package below.
+        </p>
 
-          <button class="package" onclick="selectPackage(this,'60 UC — GYD 300')">
-            <span>60 UC</span>
-            <strong>GYD 300</strong>
-          </button>
 
-          <button class="package" onclick="selectPackage(this,'325 UC — GYD 1,300')">
-            <span>325 UC</span>
-            <strong>GYD 1,300</strong>
-          </button>
+        <h3 style="margin-bottom:12px">
+          Choose Package
+        </h3>
 
-          <button class="package" onclick="selectPackage(this,'660 UC — GYD 2,300')">
-            <span>660 UC</span>
-            <strong>GYD 2,300</strong>
-          </button>
 
-          <button class="package" onclick="selectPackage(this,'1,800 UC — GYD 5,500')">
-            <span>1,800 UC</span>
-            <strong>GYD 5,500</strong>
+        <div
+          class="packages"
+          id="packages"
+        >
+        </div>
+
+
+        <label class="field-label" for="gamerIdInput">
+          GAMER ID / USERNAME <span style="color:#ff4d5a">*</span>
+        </label>
+
+        <input
+          class="field"
+          id="gamerIdInput"
+          type="text"
+          placeholder="e.g. Player123 or 12345678"
+          required
+        >
+
+
+        <label class="field-label" for="mmgReceiptInput">
+          MMG PAYMENT SCREENSHOT <span class="optional">(Optional)</span>
+        </label>
+
+
+        <input
+          class="field file-field"
+          id="mmgReceiptInput"
+          type="file"
+          accept="image/*"
+        >
+
+
+        <div class="file-note">
+          Upload a screenshot of your Mobile Money Guyana (MMG) transfer payment.
+          The image confirmation will be noted with your order for WhatsApp verification.
+        </div>
+
+
+        <button
+          class="btn primary"
+          style="width:100%"
+          onclick="confirmAddToCart()"
+        >
+          ADD TO CART & ORDER →
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div
+  class="toast"
+  id="toast"
+></div>
+
+
+<script>
+
+/* =========================
+   DATA
+========================= */
+
+const gameData = {
+
+  roblox: {
+
+    name:"Roblox",
+
+    image:"f93f089a3d8211ede4c832c3a24efe1e.jpg",
+
+    description:
+      "Robux top-ups for Roblox.",
+
+    packages:[
+
+      ["40 Robux",300],
+
+      ["80 Robux",600],
+
+      ["500 Robux",1300],
+
+      ["1,000 Robux",2300],
+
+      ["2,000 Robux",4600],
+
+      ["4,500 Robux",11300],
+
+      ["10,000 Robux",21500],
+
+      ["22,500 Robux",43000]
+
+    ]
+
+  },
+
+
+  freefire: {
+
+    name:"Free Fire",
+
+    image:"30de15ba0e69c62e5e5987ceaae08401.jpg",
+
+    description:
+      "Diamonds and Free Fire top-ups.",
+
+    packages:[
+
+      ["100 Diamonds",300],
+
+      ["210 Diamonds",600],
+
+      ["530 Diamonds",1300],
+
+      ["1,080 Diamonds",2500],
+
+      ["2,200 Diamonds",5200]
+
+    ]
+
+  },
+
+
+  cod: {
+
+    name:"Call of Duty Mobile",
+
+    image:"f9f56c26780ac312b21e2d3a7da703f5.jpg",
+
+    description:
+      "CP top-ups for Call of Duty Mobile.",
+
+    packages:[
+
+      ["80 CP",400],
+
+      ["420 CP",1300],
+
+      ["880 CP",2300],
+
+      ["2,400 CP",5500],
+
+      ["5,000 CP",11000],
+
+      ["10,800 CP",21500]
+
+    ]
+
+  },
+
+
+  pubg: {
+
+    name:"PUBG Mobile",
+
+    image:"f31054399c0c2604548ba7dfdced2a62.jpg",
+
+    description:
+      "UC top-ups for PUBG Mobile.",
+
+    packages:[
+
+      ["60 UC",300],
+
+      ["325 UC",1300],
+
+      ["660 UC",2300],
+
+      ["1,800 UC",5500],
+
+      ["3,850 UC",11400],
+
+      ["8,100 UC",21500]
+
+    ]
+
+  }
+
+};
+
+
+/* =========================
+   CART
+========================= */
+
+let cart = [];
+
+let currentGame = null;
+
+let selectedPackage = null;
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+  document
+    .getElementById("nav")
+    .classList.toggle("open");
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function focusSearch(){
+
+  document
+    .getElementById("games")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+  setTimeout(()=>{
+
+    document
+      .getElementById("searchInput")
+      .focus();
+
+  },500);
+
+}
+
+
+function searchGames(){
+
+  const query =
+    document
+      .getElementById("searchInput")
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  document
+    .querySelectorAll(".game")
+    .forEach(game=>{
+
+      const name =
+        game.dataset.name
+          .toLowerCase();
+
+
+      game.style.display =
+        name.includes(query)
+          ? ""
+          : "none";
+
+    });
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function filterGames(game,button){
+
+  document
+    .querySelectorAll(".filter")
+    .forEach(btn=>{
+      btn.classList.remove("active");
+    });
+
+
+  button.classList.add("active");
+
+
+  document
+    .getElementById("searchInput")
+    .value="";
+
+
+  document
+    .querySelectorAll(".game")
+    .forEach(card=>{
+
+      if(
+        game === "all" ||
+        card.dataset.game === game
+      ){
+
+        card.style.display="";
+
+      }else{
+
+        card.style.display="none";
+
+      }
+
+    });
+
+}
+
+
+/* =========================
+   OPEN PRODUCT
+========================= */
+
+function openProduct(gameKey){
+
+  const game =
+    gameData[gameKey];
+
+
+  if(!game){
+
+    return;
+
+  }
+
+
+  currentGame = gameKey;
+
+  selectedPackage = null;
+
+
+  document
+    .getElementById("modalTitle")
+    .textContent = game.name;
+
+
+  document
+    .getElementById("modalDescription")
+    .textContent = game.description;
+
+
+  document
+    .getElementById("modalImage")
+    .src = game.image;
+
+
+  document
+    .getElementById("gamerIdInput")
+    .value = "";
+
+
+  document
+    .getElementById("mmgReceiptInput")
+    .value = "";
+
+
+  const packages =
+    document.getElementById("packages");
+
+
+  packages.innerHTML =
+    game.packages.map((item,index)=>{
+
+      return `
+
+        <button
+          type="button"
+          class="package"
+          onclick="selectPackage(${index})"
+          id="package-${index}"
+        >
+
+          <span>
+            ${item[0]}
+          </span>
+
+          <strong>
+            GYD ${item[1].toLocaleString()}
+          </strong>
+
+        </button>
+
+      `;
+
+    }).join("");
+
+
+  document
+    .getElementById("productModal")
+    .classList.add("open");
+
+
+  document.body.style.overflow="hidden";
+
+
+  setTimeout(()=>{
+
+    document
+      .getElementById("gamerIdInput")
+      .focus();
+
+  },200);
+
+}
+
+
+/* =========================
+   SELECT PACKAGE
+========================= */
+
+function selectPackage(index){
+
+  const game =
+    gameData[currentGame];
+
+
+  selectedPackage =
+    game.packages[index];
+
+
+  document
+    .querySelectorAll(".package")
+    .forEach(btn=>{
+      btn.classList.remove("selected");
+    });
+
+
+  document
+    .getElementById("package-"+index)
+    .classList.add("selected");
+
+}
+
+
+/* =========================
+   CLOSE PRODUCT
+========================= */
+
+function closeProduct(){
+
+  document
+    .getElementById("productModal")
+    .classList.remove("open");
+
+
+  document.body.style.overflow="";
+
+  currentGame=null;
+
+  selectedPackage=null;
+
+}
+
+
+/* =========================
+   CONFIRM ADD TO CART
+========================= */
+
+function confirmAddToCart(){
+
+  if(!currentGame){
+
+    showToast(
+      "Please select a game."
+    );
+
+    return;
+
+  }
+
+
+  if(!selectedPackage){
+
+    showToast(
+      "Please choose a package first."
+    );
+
+    return;
+
+  }
+
+
+  const gamerId =
+    document
+      .getElementById("gamerIdInput")
+      .value
+      .trim();
+
+
+  if(!gamerId){
+
+    showToast(
+      "Please enter your Gamer ID or Username!"
+    );
+
+    return;
+
+  }
+
+
+  const fileInput =
+    document.getElementById("mmgReceiptInput");
+
+
+  const file =
+    fileInput.files[0];
+
+
+  if(file){
+
+    if(!file.type.startsWith("image/")){
+
+      showToast(
+        "Please upload a valid image screenshot."
+      );
+
+      return;
+
+    }
+
+
+    const reader =
+      new FileReader();
+
+
+    reader.onload =
+      function(event){
+
+        saveItem(
+
+          gamerId,
+
+          event.target.result,
+
+          file.name
+
+        );
+
+      };
+
+
+    reader.onerror =
+      function(){
+
+        showToast(
+          "Could not read payment image."
+        );
+
+      };
+
+
+    reader.readAsDataURL(file);
+
+
+  }else{
+
+    saveItem(
+      gamerId,
+      null,
+      null
+    );
+
+  }
+
+}
+
+
+/* =========================
+   SAVE ITEM
+========================= */
+
+function saveItem(
+  gamerId,
+  receiptData,
+  receiptName
+){
+
+  const game =
+    gameData[currentGame];
+
+
+  const newItem = {
+
+    game:game.name,
+
+    name:
+      game.name +
+      " — " +
+      selectedPackage[0],
+
+    price:
+      selectedPackage[1],
+
+    image:
+      game.image,
+
+    gamerId:gamerId,
+
+    receipt:
+      receiptData,
+
+    receiptName:
+      receiptName
+
+  };
+
+
+  cart.push(newItem);
+
+
+  updateCart();
+
+
+  closeProduct();
+
+
+  showToast(
+    "Added to cart ✓"
+  );
+
+
+  /*
+    Automatically open WhatsApp
+    for this order.
+  */
+
+  sendWhatsAppOrder(newItem);
+
+}
+
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart(){
+
+  const container =
+    document.getElementById("cartItems");
+
+
+  const count =
+    document.getElementById("cartCount");
+
+
+  const total =
+    document.getElementById("cartTotal");
+
+
+  count.textContent =
+    cart.length;
+
+
+  if(cart.length === 0){
+
+    container.innerHTML =
+      '<div class="empty">Your cart is empty.</div>';
+
+    total.textContent =
+      "GYD 0";
+
+    return;
+
+  }
+
+
+  let sum=0;
+
+
+  container.innerHTML =
+    cart.map((item,index)=>{
+
+      sum += item.price;
+
+
+      const receipt =
+        item.receiptName
+
+        ?
+
+        `
+          <div class="receipt-attached">
+            MMG Screenshot Attached ✓
+          </div>
+        `
+
+        :
+
+        "";
+
+
+      return `
+
+        <div class="cart-item">
+
+          <img
+            src="${item.image}"
+            alt="${item.game}"
+          >
+
+
+          <div>
+
+            <h4>
+              ${item.name}
+            </h4>
+
+            <div class="cart-uid">
+              ID: ${item.gamerId}
+            </div>
+
+            ${receipt}
+
+            <div class="cart-price">
+              GYD ${item.price.toLocaleString()}
+            </div>
+
+          </div>
+
+
+          <button
+            class="remove"
+            onclick="removeFromCart(${index})"
+          >
+            ✕
           </button>
 
         </div>
 
-        <input class="field" id="playerId"
-               placeholder="Enter Player ID / Username">
+      `;
 
-        <button class="btn primary"
-                style="width:100%"
-                onclick="sendOrder()">
-          SEND ORDER REQUEST →
-        </button>
+    }).join("");
 
-      </div>
-    </div>
-  </div>
-</div>
 
-<script>
-let currentGame="";
-let selectedPackage="";
+  total.textContent =
+    "GYD " +
+    sum.toLocaleString();
 
-function openProduct(name,image,description){
-  currentGame=name;
-  selectedPackage="";
-
-  document.getElementById("modalTitle").textContent=name;
-  document.getElementById("modalImg").src=image;
-  document.getElementById("modalDesc").textContent=description;
-  document.getElementById("playerId").value="";
-
-  document.querySelectorAll(".package")
-    .forEach(x=>x.classList.remove("selected"));
-
-  document.getElementById("modal").classList.add("open");
-  document.body.style.overflow="hidden";
 }
 
-function closeProduct(){
-  document.getElementById("modal").classList.remove("open");
-  document.body.style.overflow="";
+
+/* =========================
+   REMOVE CART ITEM
+========================= */
+
+function removeFromCart(index){
+
+  cart.splice(index,1);
+
+  updateCart();
+
+  showToast(
+    "Item removed."
+  );
+
 }
 
-function selectPackage(button,value){
-  document.querySelectorAll(".package")
-    .forEach(x=>x.classList.remove("selected"));
 
-  button.classList.add("selected");
-  selectedPackage=value;
+/* =========================
+   OPEN CART
+========================= */
+
+function openCart(){
+
+  document
+    .getElementById("cart")
+    .classList.add("open");
+
+
+  document
+    .getElementById("cartOverlay")
+    .classList.add("open");
+
 }
 
-function sendOrder(){
 
-  const player=document.getElementById("playerId").value.trim();
+/* =========================
+   CLOSE CART
+========================= */
 
-  if(!selectedPackage){
-    alert("Please choose a package first.");
-    return;
+function closeCart(){
+
+  document
+    .getElementById("cart")
+    .classList.remove("open");
+
+
+  document
+    .getElementById("cartOverlay")
+    .classList.remove("open");
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+  const toast =
+    document.getElementById("toast");
+
+
+  toast.textContent =
+    message;
+
+
+  toast.classList.add("show");
+
+
+  setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+  },2500);
+
+}
+
+
+/* =========================
+   SINGLE WHATSAPP ORDER
+========================= */
+
+function sendWhatsAppOrder(item){
+
+  let messageText =
+
+    "Hi DARK! I'd like to place an order:\n\n" +
+
+    "🎮 Game: " +
+    item.game +
+    "\n" +
+
+    "📦 Package: " +
+    item.name +
+    "\n" +
+
+    "💰 Price: GYD " +
+    item.price.toLocaleString() +
+    "\n" +
+
+    "👤 Gamer ID / Username: " +
+    item.gamerId +
+    "\n";
+
+
+  if(item.receiptName){
+
+    messageText +=
+
+      "\n📲 MMG Payment Screenshot: Attached (" +
+      item.receiptName +
+      ")\n" +
+
+      "I will send the receipt image directly in this WhatsApp chat.\n";
+
+  } else {
+
+    messageText +=
+
+      "\n📲 MMG Payment: Pending / Will send screenshot\n";
+
   }
 
-  if(!player){
-    alert("Please enter your Player ID or Username.");
-    return;
-  }
 
-  const message=
-    "Hi DARK! I want to place an order.%0A%0A"+
-    "Game: "+encodeURIComponent(currentGame)+
-    "%0APackage: "+encodeURIComponent(selectedPackage)+
-    "%0APlayer ID/Username: "+encodeURIComponent(player);
+  messageText +=
+
+    "\nTotal: GYD " +
+    item.price.toLocaleString() +
+
+    "\n\nPlease confirm my order and top-up details.";
+
+
+  const message =
+    encodeURIComponent(messageText);
+
 
   window.open(
-    "https://wa.me/13436555995?text="+message,
+    "https://wa.me/13436555995?text=" +
+    message,
     "_blank"
   );
+
 }
 
-document.getElementById("modal").addEventListener("click",function(e){
-  if(e.target===this) closeProduct();
-});
+
+/* =========================
+   MULTIPLE ITEM CHECKOUT
+========================= */
+
+function checkout(){
+
+  if(cart.length===0){
+
+    showToast(
+      "Your cart is empty."
+    );
+
+    return;
+
+  }
+
+
+  let receiptNames=[];
+
+
+  const items =
+    cart.map(item=>{
+
+      if(item.receiptName){
+
+        receiptNames.push(
+          item.receiptName
+        );
+
+      }
+
+
+      return (
+
+        "• " +
+        item.name +
+
+        " — GYD " +
+        item.price.toLocaleString() +
+
+        " (ID: " +
+        item.gamerId +
+        ")"
+
+      );
+
+    }).join("\n");
+
+
+  const total =
+    cart.reduce(
+      (sum,item)=>
+        sum + item.price,
+      0
+    );
+
+
+  let messageText =
+
+    "Hi DARK! I'd like to place an order for multiple items:\n\n" +
+
+    items +
+
+    "\n\n" +
+
+    "Total: GYD " +
+    total.toLocaleString();
+
+
+  if(receiptNames.length){
+
+    messageText +=
+
+      "\n\n📲 MMG Payment Screenshot(s):\n" +
+
+      receiptNames.join("\n") +
+
+      "\n\n" +
+
+      "I will send the receipt image(s) directly in this WhatsApp chat.";
+
+  }
+
+
+  messageText +=
+
+    "\n\nPlease send me the payment instructions/confirmation.";
+
+
+  const message =
+    encodeURIComponent(messageText);
+
+
+  window.open(
+    "https://wa.me/13436555995?text=" +
+    message,
+    "_blank"
+  );
+
+}
+
+
+/* =========================
+   CLOSE MODAL BY BACKGROUND
+========================= */
+
+document
+  .getElementById("productModal")
+  .addEventListener(
+    "click",
+    function(event){
+
+      if(event.target === this){
+
+        closeProduct();
+
+      }
+
+    }
+  );
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Escape"){
+
+      closeProduct();
+
+      closeCart();
+
+    }
+
+  }
+);
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+updateCart();
+
 </script>
 
 </body>
 </html>
+
