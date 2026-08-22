@@ -3,11 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030508">
 <title>DARK | Gaming Store</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Arial,Helvetica,sans-serif;
 background:#030406;
@@ -31,15 +40,31 @@ position:fixed;
 inset:0;
 z-index:-4;
 background:
-radial-gradient(circle at 20% 20%,rgba(0,145,255,.22),transparent 28%),
-radial-gradient(circle at 80% 40%,rgba(0,255,140,.10),transparent 25%);
+radial-gradient(
+circle at 20% 20%,
+rgba(0,145,255,.22),
+transparent 28%
+),
+radial-gradient(
+circle at 80% 40%,
+rgba(0,255,140,.10),
+transparent 25%
+);
 pointer-events:none;
 }
 
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
+a{
+text-decoration:none;
+color:inherit;
+}
 
-/* HEADER */
+button,
+input{
+font:inherit;
+}
+
+/* ================= HEADER ================= */
+
 header{
 position:fixed;
 top:0;
@@ -77,6 +102,7 @@ font-size:12px;
 font-weight:900;
 letter-spacing:1px;
 color:#b4becb;
+transition:.25s;
 }
 
 nav a:hover{
@@ -91,9 +117,11 @@ border:1px solid #123;
 color:#fff;
 padding:10px;
 border-radius:10px;
+cursor:pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
 min-height:100vh;
 padding-top:78px;
@@ -171,7 +199,13 @@ border:1px solid rgba(255,255,255,.15);
 color:#fff;
 }
 
-/* HERO LOGO */
+.secondary:hover{
+border-color:#00aaff;
+color:#00b7ff;
+}
+
+/* ================= HERO LOGO ================= */
+
 .hero-logo{
 width:min(450px,90%);
 display:block;
@@ -183,11 +217,19 @@ animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-14px)}
+
+0%,100%{
+transform:translateY(0);
 }
 
-/* SECTIONS */
+50%{
+transform:translateY(-14px);
+}
+
+}
+
+/* ================= SECTIONS ================= */
+
 section{
 padding:100px 0;
 }
@@ -208,7 +250,8 @@ line-height:1.6;
 margin-bottom:35px;
 }
 
-/* GAMES */
+/* ================= GAMES ================= */
+
 .games{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -229,7 +272,8 @@ transition:.35s;
 .game:hover{
 transform:translateY(-9px);
 border-color:#00aaff;
-box-shadow:0 20px 60px rgba(0,0,0,.6),
+box-shadow:
+0 20px 60px rgba(0,0,0,.6),
 0 0 30px rgba(0,170,255,.18);
 }
 
@@ -248,7 +292,8 @@ transform:scale(1.08);
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(
+background:
+linear-gradient(
 transparent 25%,
 rgba(0,0,0,.95)
 );
@@ -277,7 +322,8 @@ margin:8px 0;
 color:#aab4c0;
 }
 
-/* DEALS */
+/* ================= DEALS ================= */
+
 .deals{
 display:grid;
 grid-template-columns:1.4fr .8fr;
@@ -303,7 +349,8 @@ line-height:1.7;
 margin-bottom:25px;
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
+
 .features{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -315,6 +362,12 @@ padding:30px;
 border-radius:20px;
 background:rgba(255,255,255,.035);
 border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-5px);
+border-color:rgba(0,170,255,.4);
 }
 
 .feature span{
@@ -330,7 +383,8 @@ color:#7e8b9b;
 line-height:1.6;
 }
 
-/* PAYMENT */
+/* ================= PAYMENT ================= */
+
 .payment{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -361,13 +415,17 @@ border-bottom:1px solid rgba(255,255,255,.07);
 color:#8290a0;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+
 .contact{
 text-align:center;
 padding:70px 30px;
 border-radius:30px;
 background:
-linear-gradient(rgba(3,7,12,.8),rgba(3,7,12,.9)),
+linear-gradient(
+rgba(3,7,12,.8),
+rgba(3,7,12,.9)
+),
 url("1787436314905.png") center/cover;
 border:1px solid rgba(0,170,255,.2);
 }
@@ -377,7 +435,8 @@ color:#8794a4;
 margin:15px 0 25px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
 padding:35px 0;
 border-top:1px solid rgba(255,255,255,.08);
@@ -391,7 +450,8 @@ display:flex;
 justify-content:space-between;
 }
 
-/* PRODUCT POPUP */
+/* ================= PRODUCT POPUP ================= */
+
 .modal-bg{
 position:fixed;
 inset:0;
@@ -446,6 +506,10 @@ font-size:28px;
 cursor:pointer;
 }
 
+.close:hover{
+color:#00aaff;
+}
+
 .modal-content h2{
 margin:15px 0;
 }
@@ -461,6 +525,7 @@ border:1px solid rgba(255,255,255,.08);
 background:#0d131b;
 color:#fff;
 cursor:pointer;
+transition:.2s;
 }
 
 .package:hover,
@@ -482,10 +547,13 @@ outline:none;
 
 .field:focus{
 border-color:#00aaff;
+box-shadow:0 0 15px rgba(0,170,255,.15);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
+
 @media(max-width:950px){
+
 .hero-inner{
 grid-template-columns:1fr;
 text-align:center;
@@ -508,6 +576,7 @@ grid-template-columns:repeat(2,1fr);
 .deals{
 grid-template-columns:1fr;
 }
+
 }
 
 @media(max-width:700px){
@@ -563,43 +632,63 @@ min-height:0;
 flex-direction:column;
 gap:10px;
 }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+
 <div class="nav">
 
 <a href="#home">
-<img class="logo-img"
+
+<img
+class="logo-img"
 src="1787436309105.png"
 alt="DARK Logo">
+
 </a>
 
 <nav id="nav">
+
 <a href="#home">HOME</a>
 <a href="#games">GAMING</a>
 <a href="#deals">DEALS</a>
 <a href="#payment">PAYMENT</a>
 <a href="#contact">CONTACT</a>
+
 </nav>
 
-<button class="menu"
+<button
+class="menu"
 onclick="document.getElementById('nav').classList.toggle('open')">
+
 ☰
+
 </button>
 
 </div>
+
 </header>
 
-<!-- HERO -->
+
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
+
 <div class="hero-inner">
 
 <div>
-<div class="tag">DARK DIGITAL GAMING</div>
+
+<div class="tag">
+DARK DIGITAL GAMING
+</div>
 
 <h1>
 LEVEL UP<br>
@@ -613,271 +702,589 @@ through DARK.
 </p>
 
 <div class="actions">
-<a href="#games" class="btn primary">
+
+<a
+href="#games"
+class="btn primary">
+
 EXPLORE GAMING →
+
 </a>
 
-<a href="#contact" class="btn secondary">
+<a
+href="#contact"
+class="btn secondary">
+
 CONTACT DARK
+
 </a>
+
 </div>
+
 </div>
+
 
 <div>
+
 <img
 class="hero-logo"
 src="1787436309105.png"
 alt="DARK">
+
 </div>
 
 </div>
+
 </section>
 
-<!-- GAMES -->
+
+<!-- ================= GAMES ================= -->
+
 <section id="games">
+
 <div class="wrap">
 
-<div class="tag">DARK GAMING</div>
-<h2>Choose Your Game</h2>
+<div class="tag">
+DARK GAMING
+</div>
+
+<h2>
+Choose Your Game
+</h2>
 
 <p class="desc">
 Tap a game to see its exact packages and start your order.
 </p>
 
+
 <div class="games">
 
-<div class="game"
-onclick="openProduct('Roblox','Robux','images/f93f089a3d8211ede4c832c3a24efe1e.jpg',
-[['40 Robux','300'],['80 Robux','600'],['500 Robux','1,300'],['1,000 Robux','2,300'],['2,000 Robux','4,600'],['4,500 Robux','11,300'],['10,000 Robux','21,500'],['22,500 Robux','43,000']])">
 
-<img src="images/f93f089a3d8211ede4c832c3a24efe1e.jpg">
+<!-- ================= ROBLOX ================= -->
+
+<div
+class="game"
+onclick="openProduct(
+'Roblox',
+'Robux',
+'images/f93f089a3d8211ede4c832c3a24efe1e.jpg',
+[
+['40 Robux','300'],
+['80 Robux','600'],
+['500 Robux','1,300'],
+['1,000 Robux','2,300'],
+['2,000 Robux','4,600'],
+['4,500 Robux','11,300'],
+['10,000 Robux','21,500'],
+['22,500 Robux','43,000']
+]
+)">
+
+<img
+src="images/f93f089a3d8211ede4c832c3a24efe1e.jpg"
+alt="Roblox">
+
 <div class="game-info">
-<small>ROBLOX</small>
-<h3>Robux</h3>
-<p>Tap to view packages</p>
-</div>
+
+<small>
+ROBLOX
+</small>
+
+<h3>
+Robux
+</h3>
+
+<p>
+Tap to view packages
+</p>
+
 </div>
 
-<div class="game"
-onclick="openProduct('Free Fire','Diamonds','images/30de15ba0e69c62e5e5987ceaae08401.jpg',
-[['100 Diamonds','300'],['210 Diamonds','600'],['530 Diamonds','1,300'],['1,080 Diamonds','2,500'],['2,200 Diamonds','5,200']])">
+</div>
 
-<img src="images/30de15ba0e69c62e5e5987ceaae08401.jpg">
+
+<!-- ================= FREE FIRE ================= -->
+
+<div
+class="game"
+onclick="openProduct(
+'Free Fire',
+'Diamonds',
+'images/30de15ba0e69c62e5e5987ceaae08401.jpg',
+[
+['100 Diamonds','300'],
+['210 Diamonds','600'],
+['530 Diamonds','1,300'],
+['1,080 Diamonds','2,500'],
+['2,200 Diamonds','5,200']
+]
+)">
+
+<img
+src="images/30de15ba0e69c62e5e5987ceaae08401.jpg"
+alt="Free Fire">
+
 <div class="game-info">
-<small>FREE FIRE</small>
-<h3>Diamonds</h3>
-<p>Tap to view packages</p>
-</div>
+
+<small>
+FREE FIRE
+</small>
+
+<h3>
+Diamonds
+</h3>
+
+<p>
+Tap to view packages
+</p>
+
 </div>
 
-<div class="game"
-onclick="openProduct('Call of Duty Mobile','CP','images/f9f56c26780ac312b21e2d3a7da703f5.jpg',
-[['80 CP','400'],['420 CP','1,300'],['880 CP','2,300'],['2,400 CP','5,500'],['5,000 CP','11,000'],['10,800 CP','21,500']])">
+</div>
 
-<img src="images/f9f56c26780ac312b21e2d3a7da703f5.jpg">
+
+<!-- ================= CALL OF DUTY MOBILE ================= -->
+
+<div
+class="game"
+onclick="openProduct(
+'Call of Duty Mobile',
+'CP',
+'images/f9f56c26780ac312b21e2d3a7da703f5.jpg',
+[
+['80 CP','400'],
+['420 CP','1,300'],
+['880 CP','2,300'],
+['2,400 CP','5,500'],
+['5,000 CP','11,000'],
+['10,800 CP','21,500']
+]
+)">
+
+<img
+src="images/f9f56c26780ac312b21e2d3a7da703f5.jpg"
+alt="Call of Duty Mobile">
+
 <div class="game-info">
-<small>CALL OF DUTY</small>
-<h3>CP</h3>
-<p>Tap to view packages</p>
-</div>
+
+<small>
+CALL OF DUTY MOBILE
+</small>
+
+<h3>
+CP
+</h3>
+
+<p>
+Tap to view packages
+</p>
+
 </div>
 
-<div class="game"
-onclick="openProduct('PUBG Mobile','UC','images/f31054399c0c2604548ba7dfdced2a62.jpg',
-[['60 UC','300'],['325 UC','1,300'],['660 UC','2,300'],['1,800 UC','5,500'],['3,850 UC','11,400'],['8,100 UC','21,500']])">
+</div>
 
-<img src="images/f31054399c0c2604548ba7dfdced2a62.jpg">
+
+<!-- ================= PUBG MOBILE ================= -->
+
+<div
+class="game"
+onclick="openProduct(
+'PUBG Mobile',
+'UC',
+'images/f31054399c0c2604548ba7dfdced2a62.jpg',
+[
+['60 UC','300'],
+['325 UC','1,300'],
+['660 UC','2,300'],
+['1,800 UC','5,500'],
+['3,850 UC','11,400'],
+['8,100 UC','21,500']
+]
+)">
+
+<img
+src="images/f31054399c0c2604548ba7dfdced2a62.jpg"
+alt="PUBG Mobile">
+
 <div class="game-info">
-<small>PUBG MOBILE</small>
-<h3>UC</h3>
-<p>Tap to view packages</p>
-</div>
+
+<small>
+PUBG MOBILE
+</small>
+
+<h3>
+UC
+</h3>
+
+<p>
+Tap to view packages
+</p>
+
 </div>
 
 </div>
+
+
 </div>
+
+</div>
+
 </section>
 
-<!-- DEALS -->
+
+<!-- ================= DEALS ================= -->
+
 <section id="deals">
+
 <div class="wrap">
 
-<div class="tag">DARK EXCLUSIVE</div>
-<h2>Deals & Drops</h2>
+<div class="tag">
+DARK EXCLUSIVE
+</div>
+
+<h2>
+Deals & Drops
+</h2>
 
 <div class="deals">
 
+
 <div class="deal">
-<h3>Power Up Your Game.</h3>
+
+<h3>
+Power Up Your Game.
+</h3>
+
 <p>
 Choose from DARK's gaming top-ups and get your order
 started in a few taps.
 </p>
-<a href="#games" class="btn primary">SHOP NOW</a>
+
+<a
+href="#games"
+class="btn primary">
+
+SHOP NOW
+
+</a>
+
 </div>
 
+
 <div class="deal">
-<h3>More Coming.</h3>
+
+<h3>
+More Coming.
+</h3>
+
 <p>
 Gift cards and additional digital products can be added
 as DARK grows.
 </p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
-<!-- FEATURES -->
+
+<!-- ================= FEATURES ================= -->
+
 <section>
+
 <div class="wrap">
 
-<div class="tag">WHY DARK</div>
-<h2>Built For Gamers.</h2>
+<div class="tag">
+WHY DARK
+</div>
+
+<h2>
+Built For Gamers.
+</h2>
 
 <div class="features">
 
+
 <div class="feature">
+
 <span>⚡</span>
-<h3>Fast Ordering</h3>
+
+<h3>
+Fast Ordering
+</h3>
+
 <p>
 Choose your game and package and send your order request.
 </p>
+
 </div>
 
+
 <div class="feature">
+
 <span>🛡️</span>
-<h3>Clear Payment</h3>
+
+<h3>
+Clear Payment
+</h3>
+
 <p>
 Payment information is displayed clearly before you order.
 </p>
+
 </div>
 
+
 <div class="feature">
+
 <span>🎮</span>
-<h3>Gaming Focused</h3>
+
+<h3>
+Gaming Focused
+</h3>
+
 <p>
 DARK is built around gaming top-ups and digital products.
 </p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
-<!-- PAYMENT -->
+
+<!-- ================= PAYMENT ================= -->
+
 <section id="payment">
+
 <div class="wrap">
 
-<div class="tag">PAYMENT</div>
-<h2>Complete Your Order</h2>
+<div class="tag">
+PAYMENT
+</div>
+
+<h2>
+Complete Your Order
+</h2>
 
 <div class="payment">
 
-<div class="payment-card">
-<h3>MMG</h3>
-
-<div class="line">
-<span>Number</span>
-<strong>762-6433</strong>
-</div>
-
-<div class="line">
-<span>Merchant</span>
-<strong>CASSIA HENRY</strong>
-</div>
-
-</div>
 
 <div class="payment-card">
-<h3>How It Works</h3>
+
+<h3>
+MMG
+</h3>
 
 <div class="line">
-<span>01</span>
-<strong>Choose game</strong>
+
+<span>
+Number
+</span>
+
+<strong>
+762-6433
+</strong>
+
 </div>
 
 <div class="line">
-<span>02</span>
-<strong>Choose package</strong>
+
+<span>
+Merchant
+</span>
+
+<strong>
+CASSIA HENRY
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="payment-card">
+
+<h3>
+How It Works
+</h3>
+
+<div class="line">
+
+<span>
+01
+</span>
+
+<strong>
+Choose game
+</strong>
+
 </div>
 
 <div class="line">
-<span>03</span>
-<strong>Enter Player ID</strong>
+
+<span>
+02
+</span>
+
+<strong>
+Choose package
+</strong>
+
 </div>
 
 <div class="line">
-<span>04</span>
-<strong>Send order</strong>
+
+<span>
+03
+</span>
+
+<strong>
+Enter Player ID
+</strong>
+
 </div>
+
+<div class="line">
+
+<span>
+04
+</span>
+
+<strong>
+Send order
+</strong>
 
 </div>
 
 </div>
+
+
 </div>
+
+</div>
+
 </section>
 
-<!-- CONTACT -->
+
+<!-- ================= CONTACT ================= -->
+
 <section id="contact">
+
 <div class="wrap">
 
 <div class="contact">
 
-<div class="tag">CONTACT DARK</div>
+<div class="tag">
+CONTACT DARK
+</div>
 
-<h2>Ready To Level Up?</h2>
+<h2>
+Ready To Level Up?
+</h2>
 
 <p>
 Message DARK to place your gaming order.
 </p>
 
-<div class="actions" style="justify-content:center">
+<div
+class="actions"
+style="justify-content:center">
+
 
 <a
 class="btn primary"
 href="https://wa.me/13436555995"
 target="_blank">
+
 WHATSAPP
+
 </a>
+
 
 <a
 class="btn secondary"
 href="https://wa.me/5927002769"
 target="_blank">
+
 SECOND CONTACT
+
 </a>
 
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
 <div class="footer">
-<strong>DARK</strong>
-<span>Digital Gaming Store • Guyana</span>
-<span>© 2026 DARK</span>
+
+<strong>
+DARK
+</strong>
+
+<span>
+Digital Gaming Store • Guyana
+</span>
+
+<span>
+© 2026 DARK
+</span>
+
 </div>
+
 </footer>
 
-<!-- PRODUCT WINDOW -->
-<div class="modal-bg" id="modal">
+
+<!-- ================= PRODUCT POPUP ================= -->
+
+<div
+class="modal-bg"
+id="modal">
 
 <div class="modal">
 
 <div class="modal-grid">
 
+
 <div class="modal-image">
-<img id="productImage">
+
+<img
+id="productImage"
+alt="Selected Game">
+
 </div>
+
 
 <div class="modal-content">
 
-<button class="close" onclick="closeProduct()">×</button>
+<button
+class="close"
+onclick="closeProduct()">
 
-<div class="tag">DARK GAMING</div>
+×
+
+</button>
+
+<div class="tag">
+DARK GAMING
+</div>
 
 <h2 id="productName"></h2>
 
@@ -885,60 +1292,90 @@ SECOND CONTACT
 
 <div id="packages"></div>
 
+
 <input
 class="field"
 id="player"
-placeholder="Enter Player ID / Username">
+placeholder="Enter Player ID / Username"
+autocomplete="off">
+
 
 <button
 class="btn primary"
 style="width:100%"
 onclick="sendOrder()">
+
 SEND ORDER →
+
 </button>
 
 </div>
 
 </div>
+
 </div>
+
 </div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-let currentGame="";
-let currentPackage="";
+let currentGame = "";
+let currentPackage = "";
+
+
+/* OPEN PRODUCT */
 
 function openProduct(name,type,image,packages){
 
-currentGame=name;
-currentPackage="";
+currentGame = name;
+currentPackage = "";
 
-document.getElementById("productName").textContent=name;
-document.getElementById("productType").textContent=
-"Choose your "+type+" package.";
+document.getElementById("productName").textContent = name;
 
-document.getElementById("productImage").src=image;
+document.getElementById("productType").textContent =
+"Choose your " + type + " package.";
 
-let box=document.getElementById("packages");
-box.innerHTML="";
+document.getElementById("productImage").src = image;
+
+let box = document.getElementById("packages");
+
+box.innerHTML = "";
+
 
 packages.forEach(function(p){
 
-let button=document.createElement("button");
+let button = document.createElement("button");
 
-button.className="package";
+button.className = "package";
 
-button.innerHTML=
-"<span>"+p[0]+"</span><strong>GYD $"+p[1]+"</strong>";
+button.innerHTML =
+"<span>" +
+p[0] +
+"</span>" +
+"<strong>GYD $" +
+p[1] +
+"</strong>";
 
-button.onclick=function(){
 
-document.querySelectorAll(".package")
-.forEach(x=>x.classList.remove("selected"));
+button.onclick = function(){
+
+document
+.querySelectorAll(".package")
+.forEach(function(x){
+
+x.classList.remove("selected");
+
+});
 
 button.classList.add("selected");
 
-currentPackage=p[0]+" — GYD $"+p[1];
+currentPackage =
+p[0] +
+" — GYD $" +
+p[1];
 
 };
 
@@ -946,58 +1383,114 @@ box.appendChild(button);
 
 });
 
-document.getElementById("modal").classList.add("open");
 
-document.body.style.overflow="hidden";
+document
+.getElementById("modal")
+.classList.add("open");
+
+document.body.style.overflow = "hidden";
+
 }
+
+
+/* CLOSE PRODUCT */
 
 function closeProduct(){
 
-document.getElementById("modal").classList.remove("open");
+document
+.getElementById("modal")
+.classList.remove("open");
 
-document.body.style.overflow="";
+document.body.style.overflow = "";
+
 }
+
+
+/* SEND ORDER */
 
 function sendOrder(){
 
-let player=document.getElementById("player").value.trim();
+let player =
+document
+.getElementById("player")
+.value
+.trim();
+
 
 if(!currentPackage){
 
-alert("Please choose a package.");
+alert(
+"Please choose a package."
+);
 
 return;
+
 }
+
 
 if(!player){
 
-alert("Please enter your Player ID or Username.");
+alert(
+"Please enter your Player ID or Username."
+);
 
 return;
+
 }
 
-let message=
-"Hi DARK! I want to place an order.%0A%0A"+
-"Game: "+encodeURIComponent(currentGame)+
-"%0APackage: "+encodeURIComponent(currentPackage)+
-"%0APlayer ID/Username: "+encodeURIComponent(player);
+
+let message =
+"Hi DARK! I want to place an order.\n\n" +
+
+"Game: " +
+currentGame +
+
+"\nPackage: " +
+currentPackage +
+
+"\nPlayer ID/Username: " +
+player;
+
 
 window.open(
-"https://wa.me/13436555995?text="+message,
+"https://wa.me/13436555995?text=" +
+encodeURIComponent(message),
 "_blank"
 );
 
 }
 
-document.getElementById("modal").onclick=function(e){
 
-if(e.target===this){
+/* CLICK OUTSIDE MODAL */
+
+document
+.getElementById("modal")
+.addEventListener(
+"click",
+function(e){
+
+if(e.target === this){
 
 closeProduct();
 
 }
 
-};
+});
+
+
+/* ESCAPE TO CLOSE */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Escape"){
+
+closeProduct();
+
+}
+
+});
 
 </script>
 
