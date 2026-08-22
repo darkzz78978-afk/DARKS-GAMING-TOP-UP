@@ -2565,7 +2565,7 @@ function saveItem(
 
 
 /* =========================
-   UPDATE CART
+   UPDATE CART (WITH IMAGE PREVIEW)
 ========================= */
 
 function updateCart(){
@@ -2609,13 +2609,16 @@ function updateCart(){
 
 
       const receipt =
-        item.receiptName
+        item.receipt
 
         ?
 
         `
           <div class="receipt-attached">
-            MMG Screenshot Attached ✓
+            MMG Screenshot Attached ✓<br>
+            <a href="${item.receipt}" target="_blank" style="color:#00aaff; text-decoration:underline; font-size:11px;">
+              🔍 View Image
+            </a>
           </div>
         `
 
