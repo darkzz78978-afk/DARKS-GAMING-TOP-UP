@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May We Heal From Our Trauma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // TODO: Replace with your actual EmailJS Public Key
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+    <style>
+        :root {
+            --primary: #5c766d;
+            --secondary: #eaf1ed;
+            --accent: #d4a373;
+            --dark: #2c3e35;
+            --light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Hero */
+        header {
+            background: linear-gradient(rgba(44, 62, 53, 0.4), rgba(44, 62, 53, 0.4)), url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Sections */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Chat Widget Styles */
+        .chat-widget-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+            z-index: 1000;
+        }
+
+        .chat-widget-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-popup {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+            border: 1px solid #e0e0e0;
+        }
+
+        .chat-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            padding: 20px;
+            height: 250px;
+            overflow-y: auto;
+            background-color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            background: var(--white);
+            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-footer input, .chat-footer textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .chat-footer textarea {
+            resize: none;
+            height: 60px;
+        }
+
+        .chat-footer button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .chat-footer button:hover {
+            background-color: #4a5f57;
+        }
+
+        .status-msg {
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: var(--dark);
+            color: var(--white);
+            font-size: 0.9rem;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>May We Heal From Our Trauma</h1>
+        <p>A safe, compassionate space to begin your journey toward inner peace, recovery, and wholeness.</p>
+    </header>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>You Don't Have to Walk Alone</h2>
+            <p>Healing is a journey. We provide a supportive environment tailored to your unique emotional needs.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Safe Space</h3>
+                <p>Express your feelings freely without judgment. Our priority is making sure you feel heard, validated, and secure.</p>
+            </div>
+            <div class="card">
+                <h3>Trauma-Informed</h3>
+                <p>Specialized approaches focused on understanding, recognizing, and responding to the effects of all types of trauma.</p>
+            </div>
+            <div class="card">
+                <h3>Personalized Care</h3>
+                <p>Every healing journey is distinct. We work at a pace that feels right and safe for you and your mind.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="chat-widget-btn" onclick="toggleChat()">💬 Chat with Us</button>
+
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">
+            <h4>May We Heal Support</h4>
+            <button class="close-chat" onclick="toggleChat()">&times;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <p><strong>Support:</strong> Hello there. Feel free to leave a message or text your thoughts. We will be notified instantly and get back to you.</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="senderName" placeholder="Your Name (Optional)">
+            <textarea id="senderMessage" placeholder="Type your message here..."></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+            <div class="status-msg" id="statusMsg"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 May We Heal From Our Trauma. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleChat() {
+            const chat = document.getElementById('chatPopup');
+            chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendMessage() {
+            const name = document.getElementById('senderName').value.trim() || "Anonymous Visitor";
+            const message = document.getElementById('senderMessage').value.trim();
+            const statusMsg = document.getElementById('statusMsg');
+
+            if (!message) {
+                statusMsg.style.color = "red";
+                statusMsg.innerText = "Please write a message before sending.";
+                return;
+            }
+
+            statusMsg.style.color = "var(--primary)";
+            statusMsg.innerText = "Sending notification...";
+
+            // Parameters sent to your email via EmailJS
+            const templateParams = {
+                from_name: name,
+                message: message,
+                to_email: "your-email@gmail.com" // Update with your actual email in EmailJS template settings
+            };
+
+            // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS credentials
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    statusMsg.style.color = "green";
+                    statusMsg.innerText = "Message sent! We'll be in touch.";
+                    document.getElementById('senderMessage').value = "";
+                    
+                    // Append user message to chat UI
+                    const chatBody = document.getElementById('chatBody');
+                    chatBody.innerHTML += `<p style="margin-top: 10px;"><strong>You:</strong> ${message}</p>`;
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, function(error) {
+                    statusMsg.style.color = "red";
+                    statusMsg.innerText = "Failed to send. Please try again.";
+                    console.error('FAILED...', error);
+                });
+        }
+    </script>
+</body>
+</html>
